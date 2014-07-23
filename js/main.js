@@ -43,6 +43,14 @@ $('div .user.outfitgrid').spectragram('getUserFeed', {
     complete: toastr.success('outfitgrid loaded')
 });
 
+$('div .user.zanerobeaus').spectragram('getUserFeed', {
+    query: 'zanerobeaus',
+    max: 5,
+    size: 'big',
+    wrapEachWith: '<p></p>',
+    complete: toastr.success('zanerobe loaded')
+});
+
 
 var $container = $('.main-container');
 // initialize
