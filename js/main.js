@@ -18,22 +18,50 @@ jQuery.fn.spectragram.accessData = {
     clientID: '8a607f8a109b4e04a831fe0309ceff0b' //8a607f8a109b4e04a831fe0309ceff0b
 };
 
-$('div .hypebeast').spectragram('getUserFeed', {
+$('div .user.hypebeast').spectragram('getUserFeed', {
     query: 'hypebeast',
-    max: 10,
+    max: 5,
     size: 'big',
     wrapEachWith: '<p></p>',
     complete: toastr.success('Hypebeast loaded')
 });
 
 
-$('div .coffeenclothes').spectragram('getUserFeed', {
+$('div .user.coffeenclothes').spectragram('getUserFeed', {
     query: 'coffeenclothes',
-    max: 10,
+    max: 5,
     size: 'big',
     wrapEachWith: '<p></p>',
     complete: toastr.success('CoffeNClothes loaded')
 });
 
+$('div .user.outfitgrid').spectragram('getUserFeed', {
+    query: 'outfitgrid',
+    max: 5,
+    size: 'big',
+    wrapEachWith: '<p></p>',
+    complete: toastr.success('outfitgrid loaded')
+});
+
+
+var $container = $('.main-container');
+// initialize
+$container.masonry({
+    itemSelector: '.user'
+});
+// layout Masonry again after all images have loaded
+$container.imagesLoaded(function () {
+    $container.masonry({
+        itemSelector: '.user'
+    });
+});
+
+
+
+/*var $container = $('#container').masonry();
+// layout Masonry again after all images have loaded
+$container.imagesLoaded( function() {
+  $container.masonry();
+});*/
 
 //toastr.clear()
